@@ -59,6 +59,7 @@ defmodule RealtimeChat.Mixfile do
       {:phoenix, "~> 0.14"},
       {:phoenix_ecto, "~> 0.4"},
       {:phoenix_html, "~> 1.1"},
+      {:phoenix_linguist, ">=0.0.1"},
       {:phoenix_live_reload, "~> 0.4.3", only: :dev},
       {:postgrex, ">= 0.0.0"},
 

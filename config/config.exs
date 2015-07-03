@@ -9,6 +9,7 @@ use Mix.Config
 config :realtime_chat, RealtimeChat.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
+  i18n: RealtimeChat.I18n,
   secret_key_base: "AEwcrny18MOdrpYA1zNIynZsafyeWwGzONS1QjxKJWJiGBoKXaUQdBkqgw1OkYHs",
   debug_errors: false,
   pubsub: [name: RealtimeChat.PubSub,
