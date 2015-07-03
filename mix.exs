@@ -56,15 +56,15 @@ defmodule RealtimeChat.Mixfile do
     [
       {:addict, "~> 0.0.5"},
       {:cowboy, "~> 1.0"},
-      {:phoenix, "~> 0.13.1"},
+      {:phoenix, "~> 0.14"},
       {:phoenix_ecto, "~> 0.4"},
-      {:phoenix_html, "~> 1.0"},
-      {:phoenix_live_reload, "~> 0.4", only: :dev},
+      {:phoenix_html, "~> 1.1"},
+      {:phoenix_live_reload, "~> 0.4.3", only: :dev},
       {:postgrex, ">= 0.0.0"},
 
       #test
       { :hound, only: :test, github: "HashNuke/hound" },
-      {:espec_phoenix, "~> 0.1.3", only: :test, app: false},
+      {:espec_phoenix, ">= 0.1.3", only: :test, app: false},
       {:factory_girl_elixir, "~> 0.1.1", only: :test},
     ]
 

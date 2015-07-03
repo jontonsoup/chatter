@@ -1,8 +1,6 @@
 defmodule RealtimeChat.SessionController do
   use RealtimeChat.Web, :controller
 
-  plug :action
-
   def login(conn, _params) do
     render(conn, "login.html")
   end
