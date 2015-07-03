@@ -1,40 +1,50 @@
-@charset "UTF-8";
+// Core variables and mixins
+@import "patterns/variables";
+@import "patterns/mixins";
 
-@import
+// Reset and dependencies
+@import "patterns/normalize";
+@import "patterns/print";
+@import "patterns/glyphicons";
 
-  // Variables, Extends, Mixins
-  "patterns/global",
+// Core CSS
+@import "patterns/scaffolding";
+@import "patterns/type";
+@import "patterns/code";
+@import "patterns/grid";
+@import "patterns/tables";
+@import "patterns/forms";
+@import "patterns/buttons";
 
-  // Base
-  "patterns/typography",
-  "patterns/button",
-  "patterns/button_group",
-  "patterns/label_badge",
-  "patterns/tooltip",
-  "patterns/popover",
-  "patterns/progress",
-  "patterns/breadcrumb",
-  "patterns/pagination",
-  "patterns/pager",
-  "patterns/form",
-  "patterns/stepper",
-  "patterns/selecter",
-  "patterns/checkbox_radio",
-  "patterns/toggle",
-  "patterns/calendar",
-  "patterns/pricing",
-  "patterns/alert",
-  "patterns/tab",
-  "patterns/pill",
-  "patterns/navbar",
-  "patterns/list",
-  "patterns/media_list",
-  "patterns/modal",
-  "patterns/well",
-  "patterns/thumbnail",
-  "patterns/jumbotron",
-  "patterns/panel",
-  "patterns/accordion",
-  "patterns/footer",
-  "patterns/timeline",
-  "patterns/dropdown";
+// Components
+@import "patterns/component-animations";
+@import "patterns/dropdowns";
+@import "patterns/button-groups";
+@import "patterns/input-groups";
+@import "patterns/navs";
+@import "patterns/navbar";
+@import "patterns/breadcrumbs";
+@import "patterns/pagination";
+@import "patterns/pager";
+@import "patterns/labels";
+@import "patterns/badges";
+@import "patterns/jumbotron";
+@import "patterns/thumbnails";
+@import "patterns/alerts";
+@import "patterns/progress-bars";
+@import "patterns/media";
+@import "patterns/list-group";
+@import "patterns/panels";
+@import "patterns/responsive-embed";
+@import "patterns/wells";
+@import "patterns/close";
+
+// Components w/ JavaScript
+@import "patterns/modals";
+@import "patterns/tooltip";
+@import "patterns/popovers";
+@import "patterns/carousel";
+
+// Utility classes
+@import "patterns/utilities";
+@import "patterns/responsive-utilities";

@@ -1,84 +1,52 @@
-// Variables
-//------------------------------------------------------
-$jumbotron-font-color:            $darkgray-dark !default;
-
-$jumbotron-background-color:      $white !default;
-
-$jumbotron-radius:                4px;
-$jumbotron-shadow:                0 1px 2px rgba(0, 0, 0, .2) !default;
+//
+// Jumbotron
+// --------------------------------------------------
 
 
-// Exports
-//------------------------------------------------------
+.jumbotron {
+  padding-top:    $jumbotron-padding;
+  padding-bottom: $jumbotron-padding;
+  margin-bottom: $jumbotron-padding;
+  color: $jumbotron-color;
+  background-color: $jumbotron-bg;
 
-@include exports("jumbotron") {
+  h1,
+  .h1 {
+    color: $jumbotron-heading-color;
+  }
 
-  /**
-   * jumbotron
-   * --------------------------------------------------
-   */
-  .jumbotron {
-    margin-bottom: 20px;
-    padding: 0;
-    @include radius($type: border-radius, $value: $jumbotron-radius);
-    background-color: $jumbotron-background-color;
-    @include box-shadow($value: $jumbotron-shadow);
+  p {
+    margin-bottom: ($jumbotron-padding / 2);
+    font-size: $jumbotron-font-size;
+    font-weight: 200;
+  }
 
-    @at-root .container & {
-      @include radius($type: border-radius, $value: $jumbotron-radius);      
+  > hr {
+    border-top-color: darken($jumbotron-bg, 10%);
+  }
+
+  .container &,
+  .container-fluid & {
+    border-radius: $border-radius-large; // Only round corners at higher resolutions if contained in a container
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top:    ($jumbotron-padding * 1.6);
+    padding-bottom: ($jumbotron-padding * 1.6);
+
+    .container &,
+    .container-fluid & {
+      padding-left:  ($jumbotron-padding * 2);
+      padding-right: ($jumbotron-padding * 2);
     }
 
-    & > &-photo img {
-      @include radius($type: border-radius, $value: $jumbotron-radius $jumbotron-radius 0 0);       
-      width: 100%;
-    }
-
-    & &-contents {
-      padding: 20px;
-      color: $jumbotron-font-color;
-    }
-    & .carousel,
-    & .carousel-inner,
-    & .carousel-inner > .item.active img {
-      @include radius($type: border-radius, $value: $jumbotron-radius $jumbotron-radius 0 0); 
-    }
-    .carousel-inner > .item > a >img, 
-    .carousel-inner > .item > img {
-      width: 100%;
-    }
-    & .carousel-control.left {
-      @include radius($type: border-radius, $value: $jumbotron-radius 0 0 0);       
-    }
-    & .carousel-control.right {
-      @include radius($type: border-radius, $value: 0 $jumbotron-radius 0 0);       
-    }
-
-    & h1, & .h1,
-    & h2, & .h2 {
-      font-weight: 400;
-    }
-
-    & h1, & .h1 {
-      font-size: 28px;
-    }
-    & h2, & .h2 {
-      font-size: 24px;
-    }
-    & p {
-      font-size: 14px;
-    }
-
-    @media screen and (min-width: 768px) {
-      &,
-      .container & {
-        padding: 0;
-      }
-      & h1,
-      & .h1 {
-        font-size: 28px;
-      }
+    h1,
+    .h1 {
+      font-size: $jumbotron-heading-font-size;
     }
   }
 }
-
-

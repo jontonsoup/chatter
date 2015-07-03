@@ -10,7 +10,6 @@
     <title><%= t!(@conn, "layouts.application.title") %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
-
   <body>
     <div class="container" role="main">
       <div class="header">
