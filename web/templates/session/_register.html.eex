@@ -1,0 +1,30 @@
+<h3>
+  <%= t!(@conn, "sessions.register.title") %>
+</h3>
+
+<%= form_tag register_path(@conn, :register), method: :post, "data-remote": true, id: "register" do %>
+  <div class="form-group">
+    <label>
+      <%= t!(@conn, "sessions.email") %>
+    </label>
+    <input type="email" name="email" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <%= t!(@conn, "sessions.username") %>
+    </label>
+    <input type="username" name="username" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <%= t!(@conn, "sessions.password") %>
+    </label>
+    <input type="password" name="password" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <%= submit t!(@conn, "sessions.password"), name: "submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

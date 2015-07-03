@@ -17,6 +17,7 @@ defmodule ESpec.Phoenix.Extend do
     quote do
       alias RealtimeChat.Repo
       import RealtimeChat.Router.Helpers
+      import RealtimeChat.I18n
       use Hound.Helpers
       use Hound.Matchers
       Code.require_file("spec/factory.exs")
