@@ -1,6 +1,7 @@
 defmodule RealtimeChat.UserController do
   use RealtimeChat.Web, :controller
 
+  plug Addict.Plugs.Authenticated
   alias RealtimeChat.User
 
   plug :scrub_params, "user" when action in [:create, :update]

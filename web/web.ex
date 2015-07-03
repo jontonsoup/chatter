@@ -25,6 +25,7 @@ defmodule RealtimeChat.Web do
   def controller do
     quote do
       use Phoenix.Controller
+      import Addict.View
 
       # Alias the data repository and import query/model functions
       alias RealtimeChat.Repo
@@ -39,6 +40,7 @@ defmodule RealtimeChat.Web do
   def view do
     quote do
       use Phoenix.View, root: "web/templates"
+      import Addict.View
 
       import PhoenixLinguist.Helpers
       # Import convenience functions from controllers

@@ -1,0 +1,18 @@
+class Session
+  init = ->
+    $('form#register').on('ajax:success', ->
+      window.location = '/'
+    ).on 'ajax:error', ->
+      $('.alert-danger').html 'Unable to login.'
+
+    $('form#login').on('ajax:success', ->
+      window.location = '/'
+    ).on 'ajax:error', ->
+      $('.alert-danger').html 'Unable to login.'
+
+    $('form#logout').on('ajax:success', ->
+      window.location = '/'
+    ).on 'ajax:error', ->
+      $('.alert-danger').html 'Unable to logout'
+
+$( () => Session.init() )

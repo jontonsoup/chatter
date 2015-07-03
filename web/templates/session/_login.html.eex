@@ -1,5 +1,5 @@
 <h3>
-  <%= t!(@conn, "sessions.register.title") %>
+  <%= t!(@conn, "sessions.login.title") %>
 </h3>
 
 <%= form_tag login_path(@conn, :login), method: :post, "data-remote": true, id: "login" do %>

@@ -10,17 +10,6 @@
 #   console.log("Success!")
 # })
 
-$('form#register').on('ajax:success', ->
-  window.location = '/'
-).on 'ajax:error', ->
-  $('.alert-danger').html 'Unable to login.'
+# class App
 
-$('form#login').on('ajax:success', ->
-  window.location = '/'
-).on 'ajax:error', ->
-  $('.alert-danger').html 'Unable to login.'
-
-# App = {
-# }
-
-# export default App
+# `export default App`

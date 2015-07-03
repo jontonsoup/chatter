@@ -7,6 +7,11 @@ defmodule RealtimeChat.I18n do
         title: "Chatter",
       ]
     ],
+    pages: [
+      index: [
+        title: "Welcome to Chatter"
+      ],
+    ],
     sessions: [
       register: [
         title: "Register",
