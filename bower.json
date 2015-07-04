@@ -1,6 +1,7 @@
 {
   "name": "realtime_chat",
   "dependencies": {
+    "alt": ">= 0.16.10",
     "jquery-ujs": "~1.0.3"
   }
 }
