@@ -1,3 +1,4 @@
+Code.require_file("spec/forge.exs")
 Code.require_file("spec/espec_phoenix_extend.ex")
 
 Mix.Task.run "ecto.create", ["--quiet"]

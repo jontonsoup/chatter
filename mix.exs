@@ -36,8 +36,8 @@ defmodule RealtimeChat.Mixfile do
   end
   defp app_list(:test) do
     [
-      :hound,
-      :factory_girl_elixir | app_list(:all)
+      :blacksmith,
+      :hound | app_list(:all)
     ]
   end
   defp app_list(_) do
@@ -64,9 +64,10 @@ defmodule RealtimeChat.Mixfile do
       {:postgrex, ">= 0.0.0"},
 
       #test
-      { :hound, only: :test, github: "HashNuke/hound" },
+      {:blacksmith, "~> 0.1"},
       {:espec_phoenix, ">= 0.1.3", only: :test, app: false},
-      {:factory_girl_elixir, "~> 0.1.1", only: :test},
+      {:faker, "~> 0.5"},
+      {:hound, only: :test, github: "HashNuke/hound" },
     ]
 
   end

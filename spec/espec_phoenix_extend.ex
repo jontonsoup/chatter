@@ -3,6 +3,8 @@ defmodule ESpec.Phoenix.Extend do
   def model do
     quote do
       alias RealtimeChat.Repo
+      import RealtimeChat.Forge
+      alias RealtimeChat.Forge
     end
   end
 
@@ -18,9 +20,10 @@ defmodule ESpec.Phoenix.Extend do
       alias RealtimeChat.Repo
       import RealtimeChat.Router.Helpers
       import RealtimeChat.I18n
+      import RealtimeChat.Forge
+      alias RealtimeChat.Forge
       use Hound.Helpers
       use Hound.Matchers
-      Code.require_file("spec/factory.exs")
       before do: Hound.start_session
       finally do: Hound.end_session
     end
