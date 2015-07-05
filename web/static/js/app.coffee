@@ -1,14 +1,30 @@
-#`import {Socket} from "phoenix";`
+Phoenix = require("phoenix")
 
-# let socket = new Phoenix.Socket("/ws",
-#  {logger: (kind, msg, data) => { console.log(${kind}: ${msg}, data) },
-#  params: {userToken: theToken}}
-#)
-# socket.connect()
-# let chan = socket.chan("topic:subtopic", {})
-# chan.join().receive("ok", chan => {
-#   console.log("Success!")
-# })
+chatInput         = $("#chat-input")
+messagesContainer = $("#messages")
+room = $("#room").data("room_id")
+id = $("#user_id").data("user_id")
+token = Cookies.get("remember_token")
+
+socket = new Phoenix.Socket("/ws", {params: {user_id: id, room_id: room}})
+socket.connect()
+chan = socket.chan("rooms:#{room}", {})
+
+chatInput.on("keypress", (event) ->
+  if(event.keyCode == 13)
+    chan.push("new_msg", {body: chatInput.val(), user_id: id, room_id: room})
+    chatInput.val("")
+)
+
+chan.on("new_msg", (payload) ->
+  messagesContainer.append("<br/>#{Date()} #{payload.body}")
+  console.log(payload.body)
+)
+
+chan.join().receive("ok", (chan) ->
+  console.log("Welcome to Phoenix Chat!")
+)
+
 
 # class App
 

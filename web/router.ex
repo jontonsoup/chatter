@@ -10,13 +10,16 @@ defmodule RealtimeChat.Router do
     plug PhoenixLinguist.Plug
   end
 
-
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/" do
     addict :routes
+  end
+
+  socket "/ws", RealtimeChat do
+    channel "rooms:*", RoomChannel
   end
 
   scope "/", RealtimeChat do
@@ -26,7 +29,9 @@ defmodule RealtimeChat.Router do
     get "/login", SessionController, :login
     get "/register", SessionController, :register
     get "/error", PageController, :error
+
     resources "/users", UserController
+    resources "/rooms", RoomsController
   end
 
   # scope "/api", RealtimeChat do

@@ -6,6 +6,7 @@ defmodule RealtimeChat.User do
     field :username, :string
     field :hash, :string
     field :recovery_hash, :string
+    has_many :messages, RealtimeChat.Message
 
     timestamps
   end

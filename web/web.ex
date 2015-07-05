@@ -19,6 +19,7 @@ defmodule RealtimeChat.Web do
   def model do
     quote do
       use Ecto.Model
+      alias RealtimeChat.Repo
     end
   end
 
@@ -63,6 +64,9 @@ defmodule RealtimeChat.Web do
   def channel do
     quote do
       use Phoenix.Channel
+      import Addict.View
+      import RealtimeChat.User
+      alias RealtimeChat.User
 
       # Alias the data repository and import query/model functions
       alias RealtimeChat.Repo
