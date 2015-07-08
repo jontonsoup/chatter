@@ -1,19 +1,17 @@
-defmodule RealtimeChat.UserSignsUp do
+defmodule RealtimeChat.UserLogsIn do
   use ESpec.Phoenix, request: RealtimeChat.Endpoint, async: true
 
-  context "users signs up" do
-    context "from the register page" do
-      it "creates a new user" do
+  context "users logs in" do
+    context "from the login page" do
+      it "redirects to the home page" do
         user = Forge.user
-        password = "secure"
+        password = "pass"
 
-        navigate_to session_path(RealtimeChat.Endpoint, :register)
+        navigate_to session_path(RealtimeChat.Endpoint, :login)
         find_element(:name, "email")
           |> fill_field(user.email)
         find_element(:name, "password")
           |> fill_field(password)
-        find_element(:name, "username")
-          |> fill_field(user.username)
         find_element(:name, "submit")
           |> submit_element
 

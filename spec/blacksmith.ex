@@ -1,9 +1,9 @@
 defmodule Blacksmith.Config do
-  def save(repo, model) do
-    repo |> save( model )
+  def save(repo, map) do
+    repo.insert!(map)
   end
 
-  def save_all(repo, list_of_models) do
-    repo |> save_all( list_of_models )
+  def save_all(repo, list) do
+    Enum.map(list, &repo.insert!/1)
   end
 end

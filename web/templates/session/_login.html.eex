@@ -18,6 +18,6 @@
   </div>
 
   <div class="form-group">
-    <%= submit "Login", class: "btn btn-primary" %>
+    <%= submit t!(@conn, "layouts.application.login"), name: "submit", class: "btn btn-primary" %>
   </div>
 <% end %>

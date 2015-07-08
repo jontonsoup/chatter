@@ -5,6 +5,8 @@ defmodule RealtimeChat.I18n do
     layouts: [
       application: [
         title: "Chatter",
+        login: "Login",
+        logout: "Logout"
       ]
     ],
     pages: [
@@ -21,7 +23,8 @@ defmodule RealtimeChat.I18n do
       ],
       email: "Email",
       username: "Username",
-      password: "Password"
+      password: "Password",
+      register: "Register"
     ]
   ]
 end

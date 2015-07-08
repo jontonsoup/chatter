@@ -25,8 +25,3 @@ chan.join().receive("ok", (chan) ->
   console.log("Welcome to Phoenix Chat!")
 )
 
-
-# class App
-
-# `export default App`
-#

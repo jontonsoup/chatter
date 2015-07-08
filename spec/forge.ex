@@ -8,6 +8,9 @@ defmodule RealtimeChat.Forge do
   __struct__: RealtimeChat.User,
   name: Faker.Name.first_name,
   email: Sequence.next(:email, &"test#{&1}@example.com"),
-  username: Sequence.next(:username, &"username#{&1}"),
-  password: Sequence.next(:pass, &"pass#{&1}")
+  username: Sequence.next(:username, &"username#{&1}")
+
+  register :room,
+  __struct__: RealtimeChat.Room,
+  topic: Faker.Name.first_name
 end
