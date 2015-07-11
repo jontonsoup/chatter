@@ -2,7 +2,6 @@
   "name": "realtime_chat",
   "dependencies": {
     "alt": ">= 0.16.10",
-    "jquery-ujs": "~1.0.3",
-    "js-cookie": ">=2.0.2"
+    "react": ">= 0.13.3"
   }
 }
