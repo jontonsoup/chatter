@@ -10,7 +10,7 @@
     <title><%= t!(@conn, "layouts.application.title") %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
-  <body>
+  <body id="app">
     <div class="container-fluid" role="main">
       <%= render "_flashes.html", conn: @conn %>
 
@@ -27,7 +27,6 @@
       <%= @inner %>
 
     </div>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script>require("web/static/js/app")</script>
+    <script src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
   </body>
 </html>
