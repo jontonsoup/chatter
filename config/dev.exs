@@ -10,8 +10,11 @@ config :realtime_chat, RealtimeChat.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  cache_static_lookup: false, 
-  watchers: [{Path.expand("node_modules/webpack/bin/webpack.js"), ["--watch", "--colors", "--progress"]}]
+  cache_static_lookup: false,
+  watchers: [
+    {Path.expand("node_modules/webpack/bin/webpack.js"), ["--watch", "--colors", "--progress"]},
+    node: ["node_modules/brunch/bin/brunch", "watch"]
+    ]
 
 # Watch static and templates for browser reloading.
 config :realtime_chat, RealtimeChat.Endpoint,
