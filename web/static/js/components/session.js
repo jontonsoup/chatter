@@ -1,6 +1,6 @@
 var React = require("react");
 var SessionStore = require("../stores/session_store");
-var Button = require('react-bootstrap').Button;
+var Button = require("react-bootstrap").Button;
 
 var session = React.createClass({
   getInitialState() {

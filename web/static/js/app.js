@@ -1,9 +1,16 @@
 var React = require('react');
 var Router = require('react-router');
-var Routes = require('./config/routes');
+var LoggedInRoutes = require('./config/logged_in_routes');
+var LoggedOutRoutes = require('./config/logged_out_routes');
 
-if (document.querySelector('#app')) {
-  Router.run(Routes, function(Root){
-    React.render(<Root />, document.getElementById('app'));
+if (document.querySelector('#loggedout_app')) {
+  Router.run(LoggedOutRoutes, function(Root){
+    React.render(<Root />, document.getElementById('loggedout_app'));
+  });
+}
+
+if (document.querySelector('#loggedin_app')) {
+  Router.run(LoggedInRoutes, function(Root){
+    React.render(<Root />, document.getElementById('loggedin_app'));
   });
 }

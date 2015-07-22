@@ -1,9 +1,7 @@
 var React = require("react");
 var RouteHandler = require("react-router").RouteHandler;
-var Register = require("../components/register");
 
-
-var Main = React.createClass({
+var LoggedInMain = React.createClass({
   render: function(){
     return (
       <div className="main-container">
@@ -12,7 +10,6 @@ var Main = React.createClass({
           </div>
         </nav>
         <div className="container">
-          <Register/>
           <RouteHandler />
         </div>
       </div>
@@ -20,4 +17,4 @@ var Main = React.createClass({
   }
 });
 
-module.exports = Main;
+module.exports = LoggedInMain;

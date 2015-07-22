@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
   <body>
-    <%= if logged_in(@conn) do %>
       <div class="row">
         <div class="col-md-2 col-md-offset-10">
           <%= form_tag logout_path(@conn, :logout), method: :post, "data-remote": true, id: "logout" do %>
@@ -19,13 +18,12 @@
         <% end %>
         </div>
       </div>
-      <% end %>
     <%= render "_flashes.html", conn: @conn %>
 
     <%= if logged_in(@conn) do %>
-      <div id="app"/>
+      <div id="loggedin_app"/>
     <% else %>
-      <%= @inner %>
+      <div id="loggedout_app"/>
     <% end %>
     <script src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
   </body>
