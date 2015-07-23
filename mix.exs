@@ -67,7 +67,7 @@ defmodule RealtimeChat.Mixfile do
       {:blacksmith, "~> 0.1"},
       {:espec_phoenix, ">= 0.1.3", only: :test, app: false},
       {:faker, "~> 0.5"},
-      {:hound, only: :test, github: "HashNuke/hound" },
+      {:hound, only: :test, github: "jontonsoup/hound" },
     ]
 
   end

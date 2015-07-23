@@ -1,0 +1,73 @@
+
+*** Console log: 2015-07-23 14:18:10 ***
+Could not read chrome manifest 'file:///Applications/Firefox.app/Contents/Resources/chrome.manifest'.
+1437675486693	addons.manager	DEBUG	Application has been upgraded
+1437675486700	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider"]
+1437675486701	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1437675486703	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1437675486704	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1437675486704	addons.manager	DEBUG	Starting provider: XPIProvider
+1437675486704	addons.xpi	DEBUG	startup
+1437675486705	addons.xpi	INFO	Mapping fxdriver@googlecode.com to /var/folders/t_/p5bprm_94rzfg6j7j_lycdw80000gn/T/webdriver-firefox-profile7ijjymq3re0/extensions/fxdriver@googlecode.com
+1437675486705	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to /Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+1437675486705	addons.xpi	DEBUG	Skipping unavailable install location app-system-share
+1437675486706	addons.xpi	DEBUG	checkForChanges
+1437675486706	addons.xpi	DEBUG	Loaded add-on state from prefs: {}
+1437675486706	addons.xpi	DEBUG	New add-on fxdriver@googlecode.com in app-profile
+1437675486707	addons.xpi	DEBUG	getModTime: Recursive scan of fxdriver@googlecode.com
+1437675486708	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1437675486708	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1437675486709	addons.xpi	DEBUG	getInstallState changed: true, state: {"app-profile":{"fxdriver@googlecode.com":{"d":"/var/folders/t_/p5bprm_94rzfg6j7j_lycdw80000gn/T/webdriver-firefox-profile7ijjymq3re0/extensions/fxdriver@googlecode.com","st":1437675486000,"mt":1437675486000}},"app-global":{"{972ce4c6-7e08-4474-a285-3208198ce6fd}":{"d":"/Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}","st":1435710511000,"mt":1435707841000}}}
+1437675486712	addons.xpi-utils	DEBUG	Opening XPI database /var/folders/t_/p5bprm_94rzfg6j7j_lycdw80000gn/T/webdriver-firefox-profile7ijjymq3re0/extensions.json
+1437675486712	addons.xpi	DEBUG	New add-on fxdriver@googlecode.com installed in app-profile
+Blocklist::_loadBlocklistFromFile: blocklist is disabled
+1437675486723	addons.xpi-utils	DEBUG	Make addon app-profile:fxdriver@googlecode.com visible
+1437675486724	DeferredSave.extensions.json	DEBUG	Save changes
+1437675486724	DeferredSave.extensions.json	DEBUG	Save changes
+1437675486725	addons.xpi	DEBUG	Updating XPIState for {"id":"fxdriver@googlecode.com","syncGUID":"lHIajuqvH3jS","location":"app-profile","version":"2.39.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Firefox WebDriver","description":"WebDriver implementation for Firefox","creator":"Simon Stewart","homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":true,"descriptor":"/var/folders/t_/p5bprm_94rzfg6j7j_lycdw80000gn/T/webdriver-firefox-profile7ijjymq3re0/extensions/fxdriver@googlecode.com","installDate":1437675486000,"updateDate":1437675486000,"applyBackgroundUpdates":1,"bootstrap":false,"size":7758622,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":true,"hasBinaryComponents":true,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"3.0","maxVersion":"31.*"}],"targetPlatforms":[{"os":"Darwin","abi":null},{"os":"SunOS","abi":null},{"os":"FreeBSD","abi":null},{"os":"WINNT","abi":"x86-msvc"},{"os":"Linux","abi":null}],"multiprocessCompatible":false}
+1437675486725	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1437675486726	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1437675486726	DeferredSave.extensions.json	DEBUG	Save changes
+1437675486726	DeferredSave.extensions.json	DEBUG	Save changes
+1437675486726	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"hbQBa6VQ-5dJ","location":"app-global","version":"39.0","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"/Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}","installDate":1435710511000,"updateDate":1435710511000,"applyBackgroundUpdates":1,"skinnable":true,"size":3169,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"39.0","maxVersion":"39.0"}],"targetPlatforms":[]}
+1437675486726	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1437675486726	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1437675486726	addons.xpi-utils	DEBUG	Updating add-on states
+1437675486727	addons.xpi-utils	DEBUG	Writing add-ons list
+1437675486730	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1437675486730	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1437675486730	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1437675486730	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1437675486731	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1437675486731	addons.manager	DEBUG	Starting provider: GMPProvider
+1437675486734	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1437675486734	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1437675486734	addons.manager	DEBUG	Starting provider: PluginProvider
+1437675486734	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1437675486735	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1437675486735	addons.manager	DEBUG	Completed startup sequence
+Could not read chrome manifest 'file:///Applications/Firefox.app/Contents/Resources/browser/extensions/%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D/chrome.manifest'.
+1437675486923	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1437675486923	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1437675486924	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1437675487003	DeferredSave.extensions.json	DEBUG	Starting timer
+1437675487034	DeferredSave.extensions.json	DEBUG	Starting write
+1437675487143	DeferredSave.extensions.json	DEBUG	Write succeeded
+1437675487144	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 16
+[JavaScript Warning: "Property contained reference to invalid variable.  Error in parsing value for 'transform'.  Falling back to 'initial'." {file: "chrome://browser/skin/browser.css" line: 7403 column: 231737 source: " translateY(calc(-1 * var(--space-above-tabbar)))"}]
+OpenGL compositor Initialized Succesfully.
+Version: 2.1 INTEL-10.6.31
+Vendor: Intel
+Renderer: Intel(R) Iris(TM) Graphics 6100
+FBO Texture Target: TEXTURE_2D
+[JavaScript Warning: "This site makes use of a SHA-1 Certificate; it's recommended you use certificates with signature algorithms that use hash functions stronger than SHA-1." {file: "https://tiles.cdn.mozilla.net/desktop/US/en-US.3aece75c9a2f365c14c1f6bd36a7678992be6cc9.ag.json" line: 0}]
+1437675490463	addons.manager	DEBUG	shutdown
+1437675490464	addons.manager	DEBUG	Calling shutdown blocker for XPIProvider
+1437675490464	addons.xpi	DEBUG	shutdown
+1437675490464	addons.xpi-utils	DEBUG	shutdown
+1437675490464	addons.manager	DEBUG	Calling shutdown blocker for LightweightThemeManager
+1437675490464	addons.manager	DEBUG	Calling shutdown blocker for GMPProvider
+1437675490465	addons.manager	DEBUG	Calling shutdown blocker for PluginProvider
+1437675490465	addons.manager	DEBUG	Calling shutdown blocker for <unnamed-provider>
+1437675490466	addons.xpi	DEBUG	Notifying XPI shutdown observers
+1437675490470	addons.manager	DEBUG	Async provider shutdown done

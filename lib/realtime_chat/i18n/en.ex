@@ -6,7 +6,7 @@ defmodule RealtimeChat.I18n do
       application: [
         title: "Chatter",
         login: "Login",
-        logout: "Logout"
+        logout: "Log out"
       ]
     ],
     pages: [

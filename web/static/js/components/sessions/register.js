@@ -36,7 +36,7 @@ var Register = React.createClass({
         <Input layout="vertical" name="username" value="" label="Username" type="text" placeholder="Sp@rky" />
 
         <Input layout="vertical" name="password" value="" label="Password" type="password" validations="minLength:8" validationError="Your password must be at least 8 characters long." placeholder="Choose a password" />
-        <Button type="submit" disabled={!this.state.canSubmit}>
+        <Button name="submit" type="submit" disabled={!this.state.canSubmit}>
           <FormattedMessage message={this.getIntlMessage("submit")}/>
         </Button>
         </Formsy.Form>

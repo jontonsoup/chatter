@@ -25,7 +25,10 @@ defmodule ESpec.Phoenix.Extend do
       use Hound.Helpers
       use Hound.Matchers
       before do: Hound.start_session
-      finally do: Hound.end_session
+      finally do
+        Hound.end_session
+      end
+
     end
   end
 

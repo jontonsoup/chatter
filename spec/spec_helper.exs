@@ -6,5 +6,6 @@ ESpec.start
    end
 
    config.finally fn(__) ->
+     Ecto.Adapters.SQL.restart_test_transaction(RealtimeChat.Repo)
    end
  end

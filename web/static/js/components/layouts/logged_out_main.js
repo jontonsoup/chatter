@@ -1,8 +1,6 @@
 var React = require("react");
 var RouteHandler = require("react-router").RouteHandler;
-var Register = require("../sessions/register");
-var i18n = require("../../utils/i18n/register");
-
+var Register = require("../sessions/register_wrapper");
 
 var LoggedOutMain = React.createClass({
   render: function(){
@@ -13,7 +11,7 @@ var LoggedOutMain = React.createClass({
           </div>
         </nav>
         <div className="container">
-          <Register {...i18n}/>
+          <Register/>
           <RouteHandler />
         </div>
       </div>
