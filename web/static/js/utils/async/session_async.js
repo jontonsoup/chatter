@@ -14,6 +14,17 @@ var SessionAsync  = {
     });
   },
 
+  createLoginSession: function(form) {
+    request
+    .post("/login")
+    .send(form)
+    .end(function(err, response){
+     Utils.checkStatus(response);
+     window.location.href = "/";
+     location.reload();
+    });
+  },
+
   destroySession: function(form) {
     request
     .post("/logout")

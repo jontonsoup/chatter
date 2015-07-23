@@ -1,6 +1,7 @@
 var React = require("react");
 var RouteHandler = require("react-router").RouteHandler;
 var Register = require("../sessions/register_wrapper");
+var Login = require("../sessions/login_wrapper");
 
 var LoggedOutMain = React.createClass({
   render: function(){
@@ -12,6 +13,7 @@ var LoggedOutMain = React.createClass({
         </nav>
         <div className="container">
           <Register/>
+          <Login/>
           <RouteHandler />
         </div>
       </div>
