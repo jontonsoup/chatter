@@ -20,6 +20,9 @@ defmodule RealtimeChat.Web do
     quote do
       use Ecto.Model
       alias RealtimeChat.Repo
+      if Mix.env == "development" do
+        require IEx
+      end
     end
   end
 
@@ -35,6 +38,9 @@ defmodule RealtimeChat.Web do
 
       # Import URL helpers from the router
       import RealtimeChat.Router.Helpers
+      if Mix.env == "development" do
+        require IEx
+      end
     end
   end
 
@@ -52,6 +58,9 @@ defmodule RealtimeChat.Web do
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
+      if Mix.env == "development" do
+        require IEx
+      end
     end
   end
 
@@ -72,6 +81,9 @@ defmodule RealtimeChat.Web do
       alias RealtimeChat.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
+      if Mix.env == "development" do
+        require IEx
+      end
 
     end
   end

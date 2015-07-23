@@ -6,7 +6,6 @@ var Input = FRC.Input;
 var ReactIntl = require("react-intl");
 var IntlMixin = ReactIntl.IntlMixin;
 var FormattedMessage  = ReactIntl.FormattedMessage;
-var SessionAsync = require("../../utils/async/session_async");
 
 var Register = React.createClass({
   mixins: [IntlMixin],
@@ -25,7 +24,7 @@ var Register = React.createClass({
     });
   },
   submit: function (model) {
-    SessionAsync.createSession(model);
+    // someDep.saveEmail(model.email);
   },
   render: function () {
     return (
