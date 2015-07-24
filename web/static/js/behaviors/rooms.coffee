@@ -4,7 +4,6 @@ chatInput         = $("#chat-input")
 messagesContainer = $("#messages")
 room = $("#room").data("room_id")
 id = $("#user_id").data("user_id")
-token = Cookies.get("remember_token")
 
 socket = new Phoenix.Socket("/ws", {params: {user_id: id, room_id: room}})
 socket.connect()

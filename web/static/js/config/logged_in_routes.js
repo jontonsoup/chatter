@@ -1,12 +1,10 @@
 var React = require('react');
-var Main = require('../components/layouts/logged_in_main');
-var Home = require('../components/home');
+var Chat = require('../components/chat/chat_wrapper');
 var Router = require('react-router');
-var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
 
 module.exports = (
-  <Route name="app" path="/" handler={Main}>
-    <DefaultRoute handler={Home} />
+  <Route name="app">
+     <Route name="chat" path="/" handler={Chat}/>
   </Route>
 );
