@@ -26,7 +26,15 @@ defmodule RealtimeChat.RoomChannel do
     end
   end
 
-  def handle_in("new_msg", %{"body" => body, "user_id" => user_id, "room_id" => room_id}, socket) do
+  def handle_in("new_msg", %{"body" => body, "id" => room_id}, socket) do
+    room = Repo.get!(Room, room_id)
+    Repo.insert! %Message{text: body, user_id: nil, room_id: room.id}
+
+    broadcast! socket, "new_msg", %{body: body}
+    {:noreply, socket}
+  end
+
+  def handle_in("new_msg", %{"body" => body, "user_id" => user_id, "id" => room_id}, socket) do
     user = Repo.get!(User, user_id)
     room = Repo.get!(Room, room_id)
     Repo.insert! %Message{text: body, user_id: user_id, room_id: room.id}

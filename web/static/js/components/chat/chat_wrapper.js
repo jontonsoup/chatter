@@ -24,7 +24,7 @@ var ChatWrapper = React.createClass({
   render: function () {
     return(
       <div className="col-md-12">
-        <MessageContainer messages={this.state.messages}></MessageContainer>
+        <MessageContainer {...this.props} messages={this.state.messages}></MessageContainer>
       </div>
     );
   }
