@@ -1,4 +1,4 @@
-defmodule RealtimeChat.RoomsController do
+defmodule RealtimeChat.RoomController do
   use RealtimeChat.Web, :controller
 
   alias RealtimeChat.Room
@@ -7,38 +7,25 @@ defmodule RealtimeChat.RoomsController do
 
   def index(conn, _params) do
     rooms = Repo.all(Room)
-    render(conn, "index.html", rooms: rooms)
-  end
-
-  def new(conn, _params) do
-    changeset = Room.changeset(%Room{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "index.json", rooms: rooms)
   end
 
   def create(conn, %{"room" => room_params}) do
     changeset = Room.changeset(%Room{}, room_params)
 
     if changeset.valid? do
-      Repo.insert!(changeset)
-
-      conn
-      |> put_flash(:info, "Room created successfully.")
-      |> redirect(to: rooms_path(conn, :index))
+      room = Repo.insert!(changeset)
+      render(conn, "show.json", room: room)
     else
-      render(conn, "new.html", changeset: changeset)
+      conn
+      |> put_status(:unprocessable_entity)
+      |> render(RealtimeChat.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    room = Repo.get from(r in Room, preload: [:messages]), id
-    user = get_session conn, :current_user
-    render(conn, "show.html", room: room, current_user: user)
-  end
-
-  def edit(conn, %{"id" => id}) do
     room = Repo.get!(Room, id)
-    changeset = Room.changeset(room)
-    render(conn, "edit.html", room: room, changeset: changeset)
+    render conn, "show.json", room: room
   end
 
   def update(conn, %{"id" => id, "room" => room_params}) do
@@ -46,22 +33,19 @@ defmodule RealtimeChat.RoomsController do
     changeset = Room.changeset(room, room_params)
 
     if changeset.valid? do
-      Repo.update!(changeset)
-
-      conn
-      |> put_flash(:info, "Room updated successfully.")
-      |> redirect(to: rooms_path(conn, :index))
+      room = Repo.update!(changeset)
+      render(conn, "show.json", room: room)
     else
-      render(conn, "edit.html", room: room, changeset: changeset)
+      conn
+      |> put_status(:unprocessable_entity)
+      |> render(RealtimeChat.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
   def delete(conn, %{"id" => id}) do
     room = Repo.get!(Room, id)
-    Repo.delete!(room)
 
-    conn
-    |> put_flash(:info, "Room deleted successfully.")
-    |> redirect(to: rooms_path(conn, :index))
+    room = Repo.delete!(room)
+    render(conn, "show.json", room: room)
   end
 end

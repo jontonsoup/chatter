@@ -1,6 +1,0 @@
-<h2>New rooms</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: rooms_path(@conn, :create) %>
-
-<%= link "Back", to: rooms_path(@conn, :index) %>

@@ -19,6 +19,7 @@ defmodule RealtimeChat.Router do
   end
 
   socket "/ws", RealtimeChat do
+    channel "rooms:lobby", RoomChannel
     channel "rooms:*", RoomChannel
   end
 
@@ -34,7 +35,8 @@ defmodule RealtimeChat.Router do
     resources "/rooms", RoomsController
   end
 
-  # scope "/api", RealtimeChat do
-  #   pipe_through :api
-  # end
+  scope "/api", RealtimeChat do
+    pipe_through :api
+    resources "/rooms", RoomController
+  end
 end
