@@ -1,6 +1,7 @@
 var alt = require("../alt");
 var Phoenix = require("../phoenix");
 var socket = new Phoenix.Socket("/ws");
+var chan = socket.chan("rooms:lobby", {});
 
 
 class RoomActions{
@@ -10,15 +11,10 @@ class RoomActions{
 
   fetchRooms() {
     socket.connect();
-    var chan = socket.chan("rooms:lobby", {});
      chan.join().receive("ok", rooms => {
       this.actions.updateRooms(rooms);
      });
     this.dispatch();
-  }
-
-  locationsFailed(errorMessage) {
-    this.dispatch(errorMessage);
   }
 }
 

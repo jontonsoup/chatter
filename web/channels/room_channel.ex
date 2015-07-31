@@ -18,7 +18,9 @@ defmodule RealtimeChat.RoomChannel do
 
   def join("rooms:" <> room_id, payload, socket) do
     if authorized?(payload) do
-      {:ok, socket}
+      room = Repo.get!(Room, room_id)
+      messages = Repo.all(assoc(room, :messages))
+      {:ok, messages, socket}
     else
       {:error, %{reason: "unauthorized"}}
     end

@@ -6,7 +6,7 @@ var Route = Router.Route;
 
 module.exports = (
   <Route name="app">
-     <Route name="rooms" path="/" handler={Rooms}/>
-     <Route name="chat" path="/chat/:id" handler={Chat}/>
+     <Route name="room" path="/" handler={Rooms}/>
+     <Route name="chat" path="/room/:id" handler={Chat}/>
   </Route>
 );

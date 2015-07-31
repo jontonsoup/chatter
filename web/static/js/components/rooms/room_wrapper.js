@@ -1,6 +1,7 @@
 var React = require("react");
 var RoomStore = require("../../stores/room_store");
 var RoomActions = require("../../actions/room_actions");
+var Link = require("react-router").Link;
 
 var RoomWrapper = React.createClass({
   getInitialState() {
@@ -22,7 +23,15 @@ var RoomWrapper = React.createClass({
   render: function () {
     return (
       <div className="col-md-12">
-        {this.state.rooms}
+      <ul>
+      {this.state.rooms.map((room) => {
+        return (
+          <Link key={room.id} to="chat" params={{id: room.id}}>
+            <li>{room.topic}</li>
+          </Link>
+        );
+      })}
+      </ul>
       </div>
     );
   }

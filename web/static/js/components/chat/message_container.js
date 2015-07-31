@@ -6,7 +6,7 @@ var MessageContainer = React.createClass({
   render: function () {
     var rows = [];
     this.props.messages.forEach(function(message) {
-      rows.push(<Message key={message.id} text={message.text} author={message.author}/>)
+      rows.push(<Message key={message.id} text={message.text} author={message.user.email}/>)
     });
     return (
       <Table striped bordered>

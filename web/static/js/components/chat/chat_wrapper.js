@@ -1,16 +1,30 @@
 var React = require('react');
 var MessageContainer = require("./message_container");
-
-var messages =  [
-    { id: 1, author: "bob", text: "howdy dowdy" },
-    { id: 2, author: "billl", text: "yeahhhh dowdy" }
-];
+var MessageStore = require("../../stores/message_store");
+var MessagesActions = require("../../actions/messages_actions");
 
 var ChatWrapper = React.createClass({
+  getInitialState() {
+    return MessageStore.getState();
+  },
+  componentDidMount() {
+    MessageStore.listen(this.onChange);
+    var id = this.props.params.id;
+    MessagesActions.fetchMessages(id);
+  },
+
+  componentWillUnmount() {
+    MessageStore.unlisten(this.onChange);
+  },
+
+  onChange(state) {
+    this.setState(state);
+  },
+
   render: function () {
-    return (
+    return(
       <div className="col-md-12">
-       <MessageContainer messages={messages}></MessageContainer>
+        <MessageContainer messages={this.state.messages}></MessageContainer>
       </div>
     );
   }
