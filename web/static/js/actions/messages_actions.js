@@ -1,14 +1,21 @@
 var alt = require("../alt");
 
 class MessagesActions{
+  fetchMessages(channel){
+  }
+
   updateMessages(message) {
     this.dispatch(message);
   }
 
-  fetchMessages(chan) {
-     chan.join().receive("ok", messages => {
+  joinChannel(channel) {
+     channel.join().receive("ok", messages => {
       this.actions.updateMessages(messages);
      });
+
+    channel.on("new_msg", payload => {
+      this.actions.updateMessages({text: payload.body});
+    });
     this.dispatch();
   }
 
@@ -19,7 +26,6 @@ class MessagesActions{
   createMessage(data) {
     var channel = data.channel;
     channel.push("new_msg", {body: data.model.message, id: data.id});
-    this.actions.updateMessages({text: data.model.message});
   }
 }
 

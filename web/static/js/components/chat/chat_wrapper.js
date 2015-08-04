@@ -16,7 +16,7 @@ var ChatWrapper = React.createClass({
     var chan = socket.chan(`rooms:${id}`, {});
     socket.connect();
     MessagesActions.setChannel(chan);
-    MessagesActions.fetchMessages(chan);
+    MessagesActions.joinChannel(chan);
   },
 
   componentWillUnmount() {
