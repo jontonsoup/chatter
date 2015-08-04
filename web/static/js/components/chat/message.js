@@ -4,7 +4,7 @@ var Message = React.createClass({
   render: function () {
     return (
     <tr>
-      <td>{this.props.author}: {this.props.text}</td>
+      <td>{this.props.text}</td>
     </tr>
     );
   }

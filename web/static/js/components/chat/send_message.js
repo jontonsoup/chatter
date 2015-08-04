@@ -20,14 +20,16 @@ var SendMessage = React.createClass({
     });
   },
   submit: function (model) {
-    MessageActions.createMessage(model);
+    var id = this.props.params.id;
+    var data = {channel: this.props.channel, model: model, id: id};
+    MessageActions.createMessage(data);
+    this.refs.form.reset();
   },
   render: function () {
     return (
       <div className="col-md-6">
-        <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+        <Formsy.Form ref="form" onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
         <Input layout="vertical" name="message" value="" type="text" validations="minLength:1" placeholder="Enter your message here" />
-        <Input name="id" value={this.props.params.id} type="hidden"/>
         <Button name="submit" type="submit" disabled={!this.state.canSubmit}>
           Send
         </Button>

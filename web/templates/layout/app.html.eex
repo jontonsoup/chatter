@@ -25,6 +25,6 @@
     <% else %>
       <div id="loggedout_app"/>
     <% end %>
-    <script src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
+    <script async src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
   </body>
 </html>
