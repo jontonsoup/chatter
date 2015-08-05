@@ -23,7 +23,8 @@ var RoomWrapper = React.createClass({
 
   render: function () {
     return (
-      <div className="col-md-12">
+      <div className="col-md-4 col-md-offset-4 well">
+      <h1>Rooms</h1>
       <ul>
       {this.state.rooms.map((room) => {
         return (

@@ -12,9 +12,15 @@ var MessageContainer = React.createClass({
     return (
       <div>
       <Table striped bordered>
-        <tbody>{rows}</tbody>
+        <tbody>
+          {rows}
+          <tr>
+            <td>
+              <SendMessage {...this.props}/>
+            </td>
+          </tr>
+        </tbody>
       </Table>
-      <SendMessage {...this.props}/>
       </div>
     );
   }
