@@ -16,6 +16,10 @@ defmodule RealtimeChat.RoomChannel do
     end
   end
 
+  def leave("rooms:lobby", payload, socket) do
+    {:ok, socket}
+  end
+
   def join("rooms:" <> room_id, payload, socket) do
     if authorized?(payload) do
       room = Repo.get!(Room, room_id)

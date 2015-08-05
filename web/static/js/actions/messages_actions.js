@@ -8,6 +8,10 @@ class MessagesActions{
     this.dispatch(message);
   }
 
+  clear() {
+    this.dispatch();
+  }
+
   joinChannel(channel) {
      channel.join().receive("ok", messages => {
       this.actions.updateMessages(messages);

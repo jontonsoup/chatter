@@ -20,6 +20,7 @@ var ChatWrapper = React.createClass({
   },
 
   componentWillUnmount() {
+    MessagesActions.clear();
     MessageStore.unlisten(this.onChange);
   },
 

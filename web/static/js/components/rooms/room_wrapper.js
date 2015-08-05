@@ -13,6 +13,7 @@ var RoomWrapper = React.createClass({
   },
 
   componentWillUnmount() {
+    RoomActions.clear();
     RoomStore.unlisten(this.onChange);
   },
 

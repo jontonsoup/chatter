@@ -9,7 +9,8 @@ class MessagesStore {
     this.bindListeners({
        handleUpdateMessages: MessageActions.UPDATE_MESSAGES,
        handleFetchMessages: MessageActions.FETCH_MESSAGES,
-       handleSetChannel: MessageActions.SET_CHANNEL
+       handleSetChannel: MessageActions.SET_CHANNEL,
+       handleClear: MessageActions.CLEAR
     });
   }
 
@@ -23,6 +24,11 @@ class MessagesStore {
 
   handleFetchMessages() {
     this.messages = [];
+  }
+
+  handleClear(){
+    this.messages = [];
+    this.channel = null;
   }
 }
 
